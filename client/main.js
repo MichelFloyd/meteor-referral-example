@@ -3,10 +3,4 @@ import { Accounts } from 'meteor/accounts-base';
 
 import './main.html';
 
-if (!Meteor.userId()) Accounts.createUser({email: 'foo@bar.com', password: 'ph00bar' });
-
-FlowRouter.route('/', {
-  action(params) {
-    BlazeLayout.render('layout',{ main: 'invite' });
-  }
-});
+if (!Meteor.userId()) Meteor.loginWithPassword('foo@bar.com', 'ph00bar'); // autologin for demo

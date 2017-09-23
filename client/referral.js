@@ -3,18 +3,6 @@ import { Tracker } from 'meteor/tracker';
 import { Session } from 'meteor/session';
 import { Template } from 'meteor/templating';
 import { Invitations } from '../imports/api/invitations/schema.js';
-import { incrementVisitCount } from '../imports/api/invitations/methods';
-
-FlowRouter.route('/referral/:invitationId', {
-  triggersEnter: [ (route) => {
-    const invitationId = route.params.invitationId;
-    Session.set('invitationId',invitationId);
-    incrementVisitCount.call({ invitationId });
-  }],
-  action(params) {
-    BlazeLayout.render('layout',{ main: 'referral' });
-  }
-});
 
 Template.referral.onCreated(function() {
   Tracker.autorun(() => {
