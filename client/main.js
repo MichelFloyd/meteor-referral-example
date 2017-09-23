@@ -1,8 +1,9 @@
 import { Meteor } from 'meteor/meteor';
-import register from './register.js';
+import { Accounts } from 'meteor/accounts-base';
+
 import './main.html';
 
-if (!Meteor.userId()) register({email: 'foo@bar.com', password: 'ph00bar' });
+if (!Meteor.userId()) Accounts.createUser({email: 'foo@bar.com', password: 'ph00bar' });
 
 FlowRouter.route('/', {
   action(params) {

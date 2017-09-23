@@ -7,7 +7,6 @@ import { incrementVisitCount } from '../imports/api/invitations/methods';
 
 FlowRouter.route('/referral/:invitationId', {
   triggersEnter: [ (route) => {
-    console.log('entering route');
     const invitationId = route.params.invitationId;
     Session.set('invitationId',invitationId);
     incrementVisitCount.call({ invitationId });
