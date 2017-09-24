@@ -17,7 +17,7 @@ Template.referral.helpers({
   },
 });
 
-Template.referral.events({
+Template.referral.events({ // directly log the user in using the demo account
   'click #login'(ev) {
     Meteor.loginWithPassword('foo@bar.com', 'ph00bar');
   }

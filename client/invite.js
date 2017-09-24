@@ -9,7 +9,6 @@ Template.invite.events({
       else {
         const mailto = `mailto:${inviteeEmail}?subject=Invitation&body=Here is an invitation link to a hot new site!\n\n${invitationUrl}`;
         location.href = encodeURI(mailto);
-        FlowRouter.go(invitationUrl);
       }
     });
   }

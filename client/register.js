@@ -4,12 +4,6 @@ import { Session } from 'meteor/session';
 import { Invitations } from '../imports/api/invitations/schema.js';
 import { processReferral } from '../imports/api/invitations/methods';
 
-FlowRouter.route('/register', {
-  action(params) {
-    BlazeLayout.render('layout',{ main: 'register' });
-  }
-});
-
 Template.register.helpers({
   invitation(){
     const invitationId = Session.get('invitationId');
